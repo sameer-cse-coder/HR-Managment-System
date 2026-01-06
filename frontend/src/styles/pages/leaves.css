@@ -1,0 +1,15 @@
+.leavesPage .leavesTable .tr {
+  grid-template-columns:
+    minmax(180px, 1.8fr)
+    minmax(110px, 0.9fr)
+    minmax(170px, 1.3fr)
+    minmax(120px, 1fr)
+    320px;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .leavesPage .leavesTable .tr {
+    grid-template-columns: 1fr;
+  }
+}

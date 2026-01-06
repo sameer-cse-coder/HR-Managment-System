@@ -1,0 +1,228 @@
+/* Global (modern, minimal) */
+:root {
+  --bg: #0b1220;
+  --bg2: #0f1a30;
+  --surface: rgba(255, 255, 255, 0.10);
+  --surface2: rgba(255, 255, 255, 0.15);
+  --text: #f8fafc;
+  --heading: #38bdf8;
+  --muted: rgba(226, 232, 240, 0.88);
+  --border: rgba(255, 255, 255, 0.24);
+  --primary: #7c3aed;
+  --primary2: #22c55e;
+  --danger: #ef4444;
+
+  --table-head: rgba(255, 255, 255, 0.18);
+  --table-row: rgba(255, 255, 255, 0.10);
+  --table-row-alt: rgba(255, 255, 255, 0.13);
+  --table-row-hover: rgba(255, 255, 255, 0.18);
+
+  --radius: 14px;
+  --radius-sm: 10px;
+
+  --shadow: 0 18px 55px rgba(0, 0, 0, 0.35);
+  --shadow-sm: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+a { color: inherit; text-decoration: none; }
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 18px 16px 26px;
+}
+
+.appMain {
+  padding: 0;
+}
+
+.pageTitle {
+  font-size: 22px;
+  font-weight: 750;
+  letter-spacing: 0.2px;
+  margin: 4px 0 14px;
+  color: var(--heading);
+}
+
+.stack { display: grid; gap: 16px; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(10px);
+}
+
+.cardTitle {
+  font-weight: 700;
+  color: var(--heading);
+  margin-bottom: 12px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+input, select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  outline: none;
+}
+
+select {
+  color-scheme: dark;
+}
+
+select option {
+  background: var(--bg);
+  color: var(--text);
+}
+
+input::placeholder {
+  color: rgba(226, 232, 240, 0.65);
+}
+
+input:focus, select:focus {
+  border-color: rgba(124, 58, 237, 0.55);
+  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.18);
+}
+
+.row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+
+.table .row {
+  flex-wrap: nowrap;
+}
+
+button {
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--primary);
+  background: var(--primary);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(1.05);
+}
+
+button.secondary {
+  border-color: var(--border);
+  background: rgba(255, 255, 255, 0.10);
+  color: var(--text);
+}
+
+button.secondary:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+button.danger {
+  border-color: var(--danger);
+  background: var(--danger);
+  color: #ffffff;
+}
+
+button.danger:hover {
+  filter: brightness(1.05);
+}
+
+button.success {
+  border-color: var(--primary2);
+  background: var(--primary2);
+  color: #ffffff;
+}
+
+button.success:hover {
+  filter: brightness(1.05);
+}
+
+.error {
+  margin-top: 10px;
+  color: rgba(254, 202, 202, 0.98);
+  font-size: 13px;
+}
+
+.table {
+  display: grid;
+  gap: 8px;
+  overflow-x: auto;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.tr {
+  display: grid;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--table-row);
+}
+
+.table .tr:not(.head):nth-child(odd) {
+  background: var(--table-row-alt);
+}
+
+.table .tr:not(.head):hover {
+  background: var(--table-row-hover);
+  border-color: rgba(255, 255, 255, 0.34);
+}
+
+.table .tr > div {
+  min-width: 0;
+}
+
+.table .tr > div:not(.row) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tr.head {
+  background: var(--table-head);
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.tr.head > div {
+  color: var(--heading);
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+
+  .table .tr > div:not(.row) {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    word-break: break-word;
+  }
+}

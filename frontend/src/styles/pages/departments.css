@@ -1,0 +1,13 @@
+.departmentsPage .departmentsTable .tr {
+  grid-template-columns:
+    minmax(160px, 1fr)
+    minmax(240px, 2fr)
+    200px;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .departmentsPage .departmentsTable .tr {
+    grid-template-columns: 1fr;
+  }
+}

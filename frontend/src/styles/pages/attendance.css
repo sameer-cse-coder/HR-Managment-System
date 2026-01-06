@@ -1,0 +1,15 @@
+.attendancePage .attendanceTable .tr {
+  grid-template-columns:
+    minmax(180px, 1.8fr)
+    minmax(130px, 1fr)
+    minmax(120px, 0.9fr)
+    minmax(160px, 1.2fr)
+    200px;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .attendancePage .attendanceTable .tr {
+    grid-template-columns: 1fr;
+  }
+}
